@@ -20,6 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
       }
     )
     inputs.wsl.nixosModules.wsl
+    ../../modules/wsl
     inputs.home-manager.nixosModules.home-manager
     {
       # Pin state version
@@ -59,9 +60,14 @@ inputs.nixpkgs.lib.nixosSystem {
       # Development Toolchains
       toolchain.nix.enable = true;
 
-      # Add window side VS Code to PATH
+      # Cursor
+      wsl.cursorInterop.enable = true;
+
       home-manager.users.${globals.user}.home.sessionPath = [
+        # Add VS Code (Windows) to PATH
         "/mnt/c/Users/${windowsUser}/AppData/Local/Programs/Microsoft VS Code/bin"
+        # Add Cursor (Windows) to PATH
+        "/mnt/c/Program Files/cursor/resources/app/bin/cursor"
       ];
     }
   ];
