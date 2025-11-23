@@ -45,7 +45,6 @@ inputs.nixpkgs.lib.nixosSystem {
         enable = true;
         defaultUser = globals.user;
         docker-desktop.enable = true;
-        wslConf.network.generateResolveConf = true; # Turn off if it breaks VPN
         interop.includePath = false; # Including Windows PATH will slow down other systems, filesystem cross talk
         # Hack around fish not entered at boot
         wslConf.boot.command = "fish";
