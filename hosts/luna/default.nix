@@ -67,7 +67,7 @@ inputs.nixpkgs.lib.nixosSystem {
         # Add VS Code (Windows) to PATH
         "/mnt/c/Users/${windowsUser}/AppData/Local/Programs/Microsoft VS Code/bin"
         # Add Cursor (Windows) to PATH
-        "/mnt/c/Program Files/cursor/resources/app/bin/cursor"
+        "/mnt/c/Program Files/cursor/resources/app/bin"
       ];
     }
   ];
